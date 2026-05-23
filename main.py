@@ -4,4 +4,8 @@ shopping_dict = {'piekarnia' : ['chleb','pączek','bułki'],
 print('Lista zakupów')
 
 for key, value in shopping_dict.items():
-    print('Idę do ', key,', kupuje tu następujące rzeczy:', value)
+    capitalized_items = []
+    for item in value:
+        capitalized_items.append(item.capitalize())
+
+    print('Idę do ', key.capitalize(),', kupuje tu następujące rzeczy:', capitalized_items)
