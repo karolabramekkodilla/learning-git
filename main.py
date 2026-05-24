@@ -1,7 +1,7 @@
 shopping_dict = {'piekarnia' : ['chleb','pączek','bułki'],
                  'warzywniak' : ['marchew', 'seler', 'rulkola']}
 
-print('Shopping list')
+print('Lista zakupów')
 
 counter = 0
 for key, value in shopping_dict.items():
