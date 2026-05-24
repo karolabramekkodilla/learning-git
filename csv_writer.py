@@ -11,5 +11,5 @@ try:
         writer = csv.writer(file)
         for employee in employees:
             writer.writerow(employee)
-except FileExistsError:
-    print("File already exists")
+except PermissionError:
+    print("Brak możliwości zapisu")
