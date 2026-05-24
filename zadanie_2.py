@@ -9,4 +9,6 @@ for item in liczby:
         liczby_podzielne_przez_5.append(item)
 print(liczby_podzielne_przez_5)
 print([item ** 3 for item in liczby_podzielne_przez_5])
+
+print("zadanie dodane w ramach ćwiczenia git")
     
