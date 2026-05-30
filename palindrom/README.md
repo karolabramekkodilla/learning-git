@@ -8,3 +8,6 @@ Podpowiedź
 Pamiętaj, że string/tekst, to kolekcja znaków. Znasz już funkcje kolekcji, które pozwalają odnosić się do elementów indeksowanych od początku i od końca.
 
 Do zadania dodaj krótką dokumentację i umieść je w zdalnym repozytorium. Link prześlij Mentorowi.
+
+Funkcja check_if_word_is_palindrom(word) porównuje kolejne znaki od początku i końca słowa.
+Jeżeli zostanie wykryta różnica, funkcja zwraca False
