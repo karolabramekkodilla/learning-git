@@ -1,0 +1,8 @@
+2026-05-31 16:07:34,530 Wyst¹pi³ wyj¹tek: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 84, in <module>
+    result = add_numbers(args)
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 7, in add_numbers
+    temp=args[0]
+         ~~~~^^^
+TypeError: 'NoneType' object is not subscriptable

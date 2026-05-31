@@ -45,16 +45,29 @@ def input_two_numbers():
 def input_many_numbers():
     arguments=[]
     value = None
-    try:
-        while value != "q":
-            value = input("Podaj liczbę do działania lub -> q - zakończ")
+    while value != "q":
+            value = input("Podaj liczbę do działania lub -> q - zakończ\n")
             if value != "q":
-                arguments.append(value)
-            
-    except ValueError:
-        logging.error("Podano wartość niebędącą liczbą")
-        print("Podana wartość nie jest liczbą")
+                try:
+                    arguments.append(float(value))
+                except ValueError:
+                    logging.error("Podano wartość niebędącą liczbą")
+                    print("Podana wartość nie jest liczbą")
+    return arguments
+    
 
+def choice():
+    while_loop = True
+    while while_loop:
+        user_choice = input("Czy chcesz podać więcej niż 2 liczby (y/n)")
+        if user_choice == "y":
+            return True
+        elif user_choice == "n":
+            return False  
+        else:
+            logging.debug(f"Podano {user_choice} nie pasuje do żadnego wyboru")
+            print("Podaj y lub n")
+        
 
 if __name__ == "__main__":
 
@@ -63,9 +76,12 @@ if __name__ == "__main__":
     )
     try:
         if case == "1":
-            args = input_two_numbers()
+            if choice():
+                args = input_many_numbers()
+            else:
+                args = input_two_numbers()
             result = add_numbers(args)
-            print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
+            print(f"Dodaję {args:.2f} ")
             print(f"Wynik to  {result:.2f}")
         elif case == "2":
             args = input_two_numbers()
@@ -73,9 +89,13 @@ if __name__ == "__main__":
             print(f"Odejmuję {args[0]:.2f} i {args[1]:.2f} ")
             print(f"Wynik to  {result:.2f}")
         elif case == "3":
-            args = input_two_numbers()
+            if choice():
+                args = input_many_numbers()
+            else:
+                args = input_two_numbers()
+
             result = multiply_numbers(args)
-            print(f"Mnożę {args[0]:.2f} i {args[1]:.2f} ")
+            print(f"Mnożę {args:.2f} ")
             print(f"Wynik to  {result:.2f}")
         elif case == "4":
             args = input_two_numbers()
