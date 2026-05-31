@@ -33,14 +33,16 @@ def subtract_numbers(args):
     return temp
 
 def input_two_numbers():
-    try:
-        a = float(input("Podaj składnik 1.\t"))
-        b = float(input("Podaj składnik 2.\t"))
-        return a,b
-    except ValueError:
-        logging.error("Podano wartość niebędącą liczbą")
-        print("Podana wartość nie jest liczbą")
-        return None
+    while True:
+        try:
+            
+                a = float(input("Podaj składnik 1.\t"))
+                b = float(input("Podaj składnik 2.\t"))
+                return a,b
+        except ValueError:
+            logging.error("Podano wartość niebędącą liczbą")
+            print("Podana wartość nie jest liczbą")
+        
     
 def input_many_numbers():
     arguments=[]
@@ -81,7 +83,7 @@ if __name__ == "__main__":
             else:
                 args = input_two_numbers()
             result = add_numbers(args)
-            print(f"Dodaję {args:.2f} ")
+            print(f"Dodaję {args} ")
             print(f"Wynik to  {result:.2f}")
         elif case == "2":
             args = input_two_numbers()
@@ -95,7 +97,7 @@ if __name__ == "__main__":
                 args = input_two_numbers()
 
             result = multiply_numbers(args)
-            print(f"Mnożę {args:.2f} ")
+            print(f"Mnożę {args} ")
             print(f"Wynik to  {result:.2f}")
         elif case == "4":
             args = input_two_numbers()

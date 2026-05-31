@@ -20,3 +20,20 @@ Traceback (most recent call last):
        ^^^^^^^^^^^
 AttributeError: 'str' object has no attribute 'type'
 2026-05-31 11:31:06,296 Próba dzielenia przez 0
+2026-05-31 16:27:57,545 Podano 2 nie pasuje do ¿adnego wyboru
+2026-05-31 16:28:05,754 Suma liczb [1.0, 2.0, 3.0, 4.0, 5.0] wynosi 15.0
+2026-05-31 16:28:05,754 Wyst¹pi³ wyj¹tek: unsupported format string passed to list.__format__
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 84, in <module>
+    print(f"Dodajê {args:.2f} ")
+                   ^^^^^^^^^^
+TypeError: unsupported format string passed to list.__format__
+2026-05-31 16:35:46,671 Podano wartoœæ niebêd¹c¹ liczb¹
+2026-05-31 16:35:50,495 Suma liczb (2.0, 3.0) wynosi 5.0
+2026-05-31 16:36:06,199 Podano wartoœæ niebêd¹c¹ liczb¹
+2026-05-31 16:36:10,684 Podano wartoœæ niebêd¹c¹ liczb¹
+2026-05-31 16:36:13,214 Odejmowanie liczb (2.0, 3.0) wynosi -1.0
+2026-05-31 16:36:52,444 Podano wartoœæ niebêd¹c¹ liczb¹
+2026-05-31 16:36:54,538 Mno¿enie liczb (2.0, 3.0) wynosi 6.0
+2026-05-31 16:37:05,521 Podano wartoœæ niebêd¹c¹ liczb¹
+2026-05-31 16:37:08,913 Próba dzielenia przez 0
