@@ -8,7 +8,7 @@ def add_numbers(args):
     for i in args[1:]:
         temp += i
     logging.debug(f"Suma liczb {args} wynosi {temp}")
-    return sum
+    return temp
 
 def multiply_numbers(args):
     temp=args[0]
@@ -60,12 +60,24 @@ if __name__ == "__main__":
     )
 
     if case == "1":
-        pass
+        args = input_two_numbers()
+        result = add_numbers(args)
+        print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
+        print(f"Wynik to  {result:.2f}")
     elif case == "2":
-        pass
+        args = input_two_numbers()
+        result = add_numbers(args)
+        print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
+        print(f"Wynik to  {result:.2f}")
     elif case == "3":
-        pass
+        args = input_two_numbers()
+        result = add_numbers(args)
+        print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
+        print(f"Wynik to  {result:.2f}")
     elif case == "4":
-        pass
+        args = input_two_numbers()
+        result = add_numbers(args)
+        print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
+        print(f"Wynik to  {result:.2f}")
     else:
         logging.debug("Wybrano nieprawidłowy case")
