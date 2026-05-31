@@ -1,39 +1,48 @@
 2026-05-31 11:14:23,507 Odejmowanie liczb (4.0, 3.0) wynosi 1.0
-2026-05-31 11:14:41,644 Mno¿enie liczb (2.0, 4.0) wynosi 8.0
-2026-05-31 11:19:16,052 Próba dzielenia przez 0
-2026-05-31 11:25:32,959 Próba dzielenia przez 0
-2026-05-31 11:25:32,960 Wyst¹pi³ wyj¹tek: {e}
-2026-05-31 11:25:57,991 Próba dzielenia przez 0
-2026-05-31 11:25:57,992 Wyst¹pi³ wyj¹tek: Unknown format code 'f' for object of type 'str'
-2026-05-31 11:27:22,272 Próba dzielenia przez 0
-2026-05-31 11:27:22,272 Wyst¹pi³ wyj¹tek: Unknown format code 'f' for object of type 'str'
+2026-05-31 11:14:41,644 Mnoï¿½enie liczb (2.0, 4.0) wynosi 8.0
+2026-05-31 11:19:16,052 Prï¿½ba dzielenia przez 0
+2026-05-31 11:25:32,959 Prï¿½ba dzielenia przez 0
+2026-05-31 11:25:32,960 Wystï¿½piï¿½ wyjï¿½tek: {e}
+2026-05-31 11:25:57,991 Prï¿½ba dzielenia przez 0
+2026-05-31 11:25:57,992 Wystï¿½piï¿½ wyjï¿½tek: Unknown format code 'f' for object of type 'str'
+2026-05-31 11:27:22,272 Prï¿½ba dzielenia przez 0
+2026-05-31 11:27:22,272 Wystï¿½piï¿½ wyjï¿½tek: Unknown format code 'f' for object of type 'str'
 Traceback (most recent call last):
   File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 84, in <module>
     print(f"Wynik to  {result:.2f}")
                       ^^^^^^^^^^^^
 ValueError: Unknown format code 'f' for object of type 'str'
-2026-05-31 11:30:36,497 Próba dzielenia przez 0
-2026-05-31 11:30:36,498 Wyst¹pi³ wyj¹tek: 'str' object has no attribute 'type'
+2026-05-31 11:30:36,497 Prï¿½ba dzielenia przez 0
+2026-05-31 11:30:36,498 Wystï¿½piï¿½ wyjï¿½tek: 'str' object has no attribute 'type'
 Traceback (most recent call last):
   File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 84, in <module>
     if result.type == float:
        ^^^^^^^^^^^
 AttributeError: 'str' object has no attribute 'type'
-2026-05-31 11:31:06,296 Próba dzielenia przez 0
-2026-05-31 16:27:57,545 Podano 2 nie pasuje do ¿adnego wyboru
+2026-05-31 11:31:06,296 Prï¿½ba dzielenia przez 0
+2026-05-31 16:27:57,545 Podano 2 nie pasuje do ï¿½adnego wyboru
 2026-05-31 16:28:05,754 Suma liczb [1.0, 2.0, 3.0, 4.0, 5.0] wynosi 15.0
-2026-05-31 16:28:05,754 Wyst¹pi³ wyj¹tek: unsupported format string passed to list.__format__
+2026-05-31 16:28:05,754 Wystï¿½piï¿½ wyjï¿½tek: unsupported format string passed to list.__format__
 Traceback (most recent call last):
   File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 84, in <module>
-    print(f"Dodajê {args:.2f} ")
+    print(f"Dodajï¿½ {args:.2f} ")
                    ^^^^^^^^^^
 TypeError: unsupported format string passed to list.__format__
-2026-05-31 16:35:46,671 Podano wartoœæ niebêd¹c¹ liczb¹
+2026-05-31 16:35:46,671 Podano wartoï¿½ï¿½ niebï¿½dï¿½cï¿½ liczbï¿½
 2026-05-31 16:35:50,495 Suma liczb (2.0, 3.0) wynosi 5.0
-2026-05-31 16:36:06,199 Podano wartoœæ niebêd¹c¹ liczb¹
-2026-05-31 16:36:10,684 Podano wartoœæ niebêd¹c¹ liczb¹
+2026-05-31 16:36:06,199 Podano wartoï¿½ï¿½ niebï¿½dï¿½cï¿½ liczbï¿½
+2026-05-31 16:36:10,684 Podano wartoï¿½ï¿½ niebï¿½dï¿½cï¿½ liczbï¿½
 2026-05-31 16:36:13,214 Odejmowanie liczb (2.0, 3.0) wynosi -1.0
-2026-05-31 16:36:52,444 Podano wartoœæ niebêd¹c¹ liczb¹
-2026-05-31 16:36:54,538 Mno¿enie liczb (2.0, 3.0) wynosi 6.0
-2026-05-31 16:37:05,521 Podano wartoœæ niebêd¹c¹ liczb¹
-2026-05-31 16:37:08,913 Próba dzielenia przez 0
+2026-05-31 16:36:52,444 Podano wartoï¿½ï¿½ niebï¿½dï¿½cï¿½ liczbï¿½
+2026-05-31 16:36:54,538 Mnoï¿½enie liczb (2.0, 3.0) wynosi 6.0
+2026-05-31 16:37:05,521 Podano wartoï¿½ï¿½ niebï¿½dï¿½cï¿½ liczbï¿½
+2026-05-31 16:37:08,913 Prï¿½ba dzielenia przez 0
+2026-05-31 16:41:46,899 Wystï¿½piï¿½ wyjï¿½tek: list index out of range
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 85, in <module>
+    result = add_numbers(args)
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 7, in add_numbers
+    temp=args[0]
+         ~~~~^^^
+IndexError: list index out of range
+2026-05-31 16:50:09,409 Suma liczb [2.0, 3.0, 1.0] wynosi 6.0

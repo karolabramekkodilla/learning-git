@@ -47,7 +47,7 @@ def input_two_numbers():
 def input_many_numbers():
     arguments=[]
     value = None
-    while value != "q":
+    while True:
             value = input("Podaj liczbę do działania lub -> q - zakończ\n")
             if value != "q":
                 try:
@@ -55,7 +55,11 @@ def input_many_numbers():
                 except ValueError:
                     logging.error("Podano wartość niebędącą liczbą")
                     print("Podana wartość nie jest liczbą")
-    return arguments
+            elif len(arguments) < 3:
+                    print("Podaj więcej liczb")
+            else:
+    
+                    return arguments
     
 
 def choice():
