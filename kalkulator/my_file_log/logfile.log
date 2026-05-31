@@ -1,0 +1,22 @@
+2026-05-31 11:14:23,507 Odejmowanie liczb (4.0, 3.0) wynosi 1.0
+2026-05-31 11:14:41,644 Mno¿enie liczb (2.0, 4.0) wynosi 8.0
+2026-05-31 11:19:16,052 Próba dzielenia przez 0
+2026-05-31 11:25:32,959 Próba dzielenia przez 0
+2026-05-31 11:25:32,960 Wyst¹pi³ wyj¹tek: {e}
+2026-05-31 11:25:57,991 Próba dzielenia przez 0
+2026-05-31 11:25:57,992 Wyst¹pi³ wyj¹tek: Unknown format code 'f' for object of type 'str'
+2026-05-31 11:27:22,272 Próba dzielenia przez 0
+2026-05-31 11:27:22,272 Wyst¹pi³ wyj¹tek: Unknown format code 'f' for object of type 'str'
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 84, in <module>
+    print(f"Wynik to  {result:.2f}")
+                      ^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'str'
+2026-05-31 11:30:36,497 Próba dzielenia przez 0
+2026-05-31 11:30:36,498 Wyst¹pi³ wyj¹tek: 'str' object has no attribute 'type'
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\kalkulator\kalkulator.py", line 84, in <module>
+    if result.type == float:
+       ^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'type'
+2026-05-31 11:31:06,296 Próba dzielenia przez 0

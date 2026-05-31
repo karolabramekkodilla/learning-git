@@ -18,6 +18,9 @@ def multiply_numbers(args):
     return temp
 def divide_numbers(args):
     temp=args[0]
+    if args[1] == 0:
+        logging.debug("Próba dzielenia przez 0")
+        return "Infinity"
     for i in args[1:]:
         temp /= i
     logging.debug(f"Dzielenie liczb {args} wynosi {temp}")
@@ -58,26 +61,31 @@ if __name__ == "__main__":
     case = input(
         "Podaj działanie, posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie: "
     )
-
-    if case == "1":
-        args = input_two_numbers()
-        result = add_numbers(args)
-        print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
-        print(f"Wynik to  {result:.2f}")
-    elif case == "2":
-        args = input_two_numbers()
-        result = add_numbers(args)
-        print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
-        print(f"Wynik to  {result:.2f}")
-    elif case == "3":
-        args = input_two_numbers()
-        result = add_numbers(args)
-        print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
-        print(f"Wynik to  {result:.2f}")
-    elif case == "4":
-        args = input_two_numbers()
-        result = add_numbers(args)
-        print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
-        print(f"Wynik to  {result:.2f}")
-    else:
-        logging.debug("Wybrano nieprawidłowy case")
+    try:
+        if case == "1":
+            args = input_two_numbers()
+            result = add_numbers(args)
+            print(f"Dodaję {args[0]:.2f} i {args[1]:.2f} ")
+            print(f"Wynik to  {result:.2f}")
+        elif case == "2":
+            args = input_two_numbers()
+            result = subtract_numbers(args)
+            print(f"Odejmuję {args[0]:.2f} i {args[1]:.2f} ")
+            print(f"Wynik to  {result:.2f}")
+        elif case == "3":
+            args = input_two_numbers()
+            result = multiply_numbers(args)
+            print(f"Mnożę {args[0]:.2f} i {args[1]:.2f} ")
+            print(f"Wynik to  {result:.2f}")
+        elif case == "4":
+            args = input_two_numbers()
+            result = divide_numbers(args)
+            print(f"Dzielę {args[0]:.2f} i {args[1]:.2f} ")
+            if type(result) == float:
+                print(f"Wynik to  {result:.2f}")
+            else:
+                print(f"Wynik to Infinity")
+        else:
+            logging.debug("Wybrano nieprawidłowy case")
+    except Exception as e:
+        logging.exception(f"Wystąpił wyjątek: {e}")
