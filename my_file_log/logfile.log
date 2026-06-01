@@ -13,3 +13,4 @@ Traceback (most recent call last):
     print(f"Dodajê {args:.2f} ")
                    ^^^^^^^^^^
 TypeError: unsupported format string passed to list.__format__
+2026-06-01 18:02:41,203 Suma liczb [2.0, 2.0, 3.0] wynosi 7.0

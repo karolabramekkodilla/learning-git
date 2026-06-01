@@ -4,46 +4,46 @@ os.makedirs("my_file_log", exist_ok=True)
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s', filename="my_file_log/logfile.log")
 
 def add_numbers(args):
+    logging.debug(f"Sumuje liczby {args}")
     temp=args[0]
     for i in args[1:]:
         temp += i
-    logging.debug(f"Suma liczb {args} wynosi {temp}")
     return temp
 
 def multiply_numbers(args):
+    logging.debug(f"Mnożę liczby {args}")
     temp=args[0]
     for i in args[1:]:
-        temp *= i
-    logging.debug(f"Mnożenie liczb {args} wynosi {temp}")
+        temp *= i   
     return temp
+
 def divide_numbers(args):
+    logging.debug(f"Dzielę liczby {args}")
     temp=args[0]
     if args[1] == 0:
         logging.debug("Próba dzielenia przez 0")
         return "Infinity"
     for i in args[1:]:
-        temp /= i
-    logging.debug(f"Dzielenie liczb {args} wynosi {temp}")
+        temp /= i    
     return temp
+
 def subtract_numbers(args):
+    logging.debug(f"Odejmuje liczby {args}")
     temp=args[0]
     for i in args[1:]:
-        temp -= i
-    logging.debug(f"Odejmowanie liczb {args} wynosi {temp}")
+        temp -= i   
     return temp
 
 def input_two_numbers():
     while True:
         try:
-            
                 a = float(input("Podaj składnik 1.\t"))
                 b = float(input("Podaj składnik 2.\t"))
-                return a,b
+                return [a, b]
         except ValueError:
             logging.error("Podano wartość niebędącą liczbą")
             print("Podana wartość nie jest liczbą")
-        
-    
+           
 def input_many_numbers():
     arguments=[]
     value = None
@@ -57,11 +57,9 @@ def input_many_numbers():
                     print("Podana wartość nie jest liczbą")
             elif len(arguments) < 3:
                     print("Podaj więcej liczb")
-            else:
-    
+            else:    
                     return arguments
     
-
 def choice():
     while_loop = True
     while while_loop:
@@ -99,7 +97,6 @@ if __name__ == "__main__":
                 args = input_many_numbers()
             else:
                 args = input_two_numbers()
-
             result = multiply_numbers(args)
             print(f"Mnożę {args} ")
             print(f"Wynik to  {result:.2f}")
