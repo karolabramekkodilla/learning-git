@@ -1,4 +1,5 @@
 from InfoCard import InfoCard
+from create_card import create_fake_card
 
 info_card = [
     InfoCard("Nikifor","Wiśniewski","Isaly's","Management consultant","NikiforWisniewski@dayrep.com"),
@@ -9,4 +10,11 @@ info_card = [
 ]
 
 for item in info_card:
+    print(item)
+info_card2 = []
+for i in range(5):
+    info_card2.append(create_fake_card())
+
+print()
+for item in info_card2:
     print(item)
