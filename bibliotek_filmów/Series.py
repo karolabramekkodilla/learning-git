@@ -3,12 +3,12 @@ class Series():
         self.title = title
         self.year = year
         self.genere = genre
-        self.genere = episode_number
-        self.genere = season_number
+        self.episode_number = episode_number
+        self.season_number = season_number
         self.plays_number = plays_number
 
     def play(plays_number):
         plays_number += 1
 
     def __str__(self):
-        print(f"{self.title}")
+        return f"\"{self.title} S{self.season_number:02}E{self.episode_number:02}\""
