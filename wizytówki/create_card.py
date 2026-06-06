@@ -1,13 +1,11 @@
 from faker import Faker
-from InfoCard import InfoCard
+from BaseContact import BaseContact
 
 fake = Faker("pl_PL")
 
 def create_fake_card():
-    return InfoCard(
+    return BaseContact(
         fake.first_name(),
         fake.last_name(),
-        fake.company(),
-        fake.job(),
         fake.email()
     )

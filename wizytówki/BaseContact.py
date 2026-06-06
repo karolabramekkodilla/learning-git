@@ -1,9 +1,8 @@
-class InfoCard():
-    def __init__(self, name, surname, company_name, position, email):
+class BaseContact():
+    def __init__(self, name, surname, company_name, email):
         self.name = name
         self.surname = surname
         self.company_name = company_name
-        self.position = position
         self.email = email
 
     def __str__(self):
