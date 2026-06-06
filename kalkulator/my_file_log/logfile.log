@@ -47,3 +47,5 @@ Traceback (most recent call last):
 IndexError: list index out of range
 2026-05-31 16:50:09,409 Suma liczb [2.0, 3.0, 1.0] wynosi 6.0
 2026-06-01 18:17:06,711 Sumuje liczby [1.0, 2.0]
+2026-06-01 18:28:30,219 Podano wartoœæ niebêd¹c¹ liczb¹
+2026-06-01 18:28:32,986 Odejmuje liczby [1.0, 2.0]
