@@ -1,5 +1,5 @@
 from BaseContact import BaseContact
-from create_card import create_fake_card
+from wizytówki.create_card import create_fake_card
 
 info_card = [
     BaseContact("Nikifor","Wiśniewski","Isaly's","Management consultant","NikiforWisniewski@dayrep.com"),
