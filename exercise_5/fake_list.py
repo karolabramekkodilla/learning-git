@@ -18,3 +18,18 @@ for i in range(5):
 print()
 for item in info_card2:
     print(item)
+
+cards_sorted_by_name = sorted(info_card2, key=lambda info_card: info_card.name)
+print(cards_sorted_by_name)
+for i in cards_sorted_by_name:
+    print(i)
+
+cards_sorted_by_surname = sorted(info_card2, key=lambda info_card: info_card.surname)
+print(cards_sorted_by_surname)
+for i in cards_sorted_by_surname:
+    print(i)
+
+cards_sorted_by_email = sorted(info_card2, key=lambda info_card: info_card.email)
+print(cards_sorted_by_email)
+for i in cards_sorted_by_email:
+    print(i)
