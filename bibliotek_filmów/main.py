@@ -2,6 +2,7 @@ from Movie import Movie
 from Series import Series
 import random
 from datetime import date
+from outside_function import outside_function
 
 def get_movies(library):
     movies = []
@@ -41,6 +42,12 @@ def top_titles(library, content_type):
 def generate_views_ten_times(library):
     for i in range(10):
         generate_views(library)
+
+def insert_full_series_seasons(library, title, year, genre, number_of_seasons, number_of_episodes):
+    for i in range(number_of_seasons):
+        for j in range(number_of_episodes):
+            library.append(Series(title, year, genre, i+1, j+1))
+
 
 print("Biblioteka filmów")
 # lista na filmy i seriale
@@ -85,3 +92,5 @@ for series in top_series:
     
     print(f"Serial nr{i} to {series}")
     i+=1
+insert_full_series_seasons(library,"Lost",2004,"Adventure",6,24)
+outside_function("Lost",library,get_series)
