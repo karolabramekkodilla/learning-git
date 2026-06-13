@@ -1,0 +1,560 @@
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/conn.py
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\conn.py", line 31, in <module>
+    create_connection(r"database.db")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\conn.py", line 11, in create_connection
+    print(f"Connected to {db_file}, sqlite version: {sqlite3.version}")
+                                                     ^^^^^^^^^^^^^^^
+AttributeError: module 'sqlite3' has no attribute 'version'
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task> pip install sqlite3
+ERROR: Could not find a version that satisfies the requirement sqlite3 (from versions: none)
+
+[notice] A new release of pip is available: 25.3 -> 26.1.2
+[notice] To update, run: C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe -m pip install --upgrade pip
+ERROR: No matching distribution found for sqlite3
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task> pip install sqlite 
+ERROR: Could not find a version that satisfies the requirement sqlite (from versions: none)
+
+[notice] A new release of pip is available: 25.3 -> 26.1.2
+[notice] To update, run: C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe -m pip install --upgrade pip
+ERROR: No matching distribution found for sqlite
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task> cd db_training
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/conn.py
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\conn.py", line 31, in <module>
+    create_connection(r"database.db")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\conn.py", line 11, in create_connection
+    print(f"Connected to {db_file}, sqlite version: {sqlite3.version}")
+                                                     ^^^^^^^^^^^^^^^
+AttributeError: module 'sqlite3' has no attribute 'version'
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/conn.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\conn.py", line 32, in <module>
+    create_connection_in_memory()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\conn.py", line 23, in create_connection_in_memory
+    print(f"Connected, sqlite version: {sqlite3.version}")
+                                        ^^^^^^^^^^^^^^^
+AttributeError: module 'sqlite3' has no attribute 'version'
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/conn.py
+Connected to database.db, sqlite version: 3.50.4
+Connected, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 2, in <module>
+    from execute_sql import execute_sql
+ImportError: cannot import name 'execute_sql' from 'execute_sql' (c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\execute_sql.py)
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 2, in <module>
+    from execute_sql import execute_sql
+ImportError: cannot import name 'execute_sql' from 'execute_sql' (c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\execute_sql.py)
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 4, in <module>
+    conn = create_connection()
+TypeError: create_connection() missing 1 required positional argument: 'db_file'
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 12, in <module>
+    execute_sql("database.db", sql)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 12, in <module>
+    execute_sql("database.db", sql)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 12, in <module>
+    execute_sql("database.db", sql)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 18, in <module>
+    execute_sql("database.db", sql)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 18, in <module>
+    execute_sql("database.db", sql)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 2, in <module>
+    from execute_sql import execute_sql
+ImportError: cannot import name 'execute_sql' from 'execute_sql' (c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\execute_sql.py)
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 2, in <module>
+    from execute_sql import execute_sql
+ImportError: cannot import name 'execute_sql' from 'execute_sql' (c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\execute_sql.py)
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 18, in <module>
+    execute_sql(conn, sql)
+    ~~~~~~~~~~~^^^^^^^^^^^
+TypeError: 'module' object is not callable
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 2, in <module>
+    from execute_sql import execute_sql
+ImportError: cannot import name 'execute_sql' from 'execute_sql' (c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\execute_sql.py)
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> dir
+
+
+    Directory: C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training
+
+
+Mode                 LastWriteTime         Length Name                                                                                               
+----                 -------------         ------ ----                                                                                               
+d-----        13.06.2026     09:39                __pycache__                                                                                        
+-a----        13.06.2026     09:31            848 conn.py                                                                                            
+-a----        13.06.2026     09:49            804 create_table.py                                                                                    
+-a----        13.06.2026     09:23           8192 database.db                                                                                        
+-a----        13.06.2026     09:36              0 execute_sql.py                                                                                     
+
+
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> dir
+
+
+    Directory: C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training
+
+
+Mode                 LastWriteTime         Length Name                                                                                               
+----                 -------------         ------ ----                                                                                               
+d-----        13.06.2026     09:39                __pycache__                                                                                        
+-a----        13.06.2026     09:31            848 conn.py                                                                                            
+-a----        13.06.2026     09:49            804 create_table.py                                                                                    
+-a----        13.06.2026     09:23           8192 database.db                                                                                        
+-a----        13.06.2026     09:52            259 execute_sql.py                                                                                     
+
+
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 18, in <module>
+    execute_sql(conn, sql)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\execute_sql.py", line 10, in execute_sql
+    c = conn.cursor()
+        ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'cursor'
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\create_table.py", line 18, in <module>
+    execute_sql(conn, sql)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\execute_sql.py", line 10, in execute_sql
+    c = conn.cursor()
+        ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'cursor'
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+Cannot operate on a closed database.
+Cannot operate on a closed database.
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/create_table.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+Wykonano SQL
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+Wykonano SQL
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+Wykonano SQL
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+3
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 43, in <module>
+    tsk_id = add_task(conn, task)
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 21, in add_task
+    cur.execute(sql, task)
+    ~~~~~~~~~~~^^^^^^^^^^^
+sqlite3.OperationalError: table projects has no column named opis
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 43, in <module>
+    tsk_id = add_task(conn, task)
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 21, in add_task
+    cur.execute(sql, task)
+    ~~~~~~~~~~~^^^^^^^^^^^
+sqlite3.OperationalError: table projects has no column named opis
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 43, in <module>
+    tsk_id = add_task(conn, task)
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 21, in add_task
+    cur.execute(sql, task)
+    ~~~~~~~~~~~^^^^^^^^^^^
+sqlite3.OperationalError: table projects has no column named project_id
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 43, in <module>
+    tsk_id = add_task(conn, task)
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 21, in add_task
+    cur.execute(sql, task)
+    ~~~~~~~~~~~^^^^^^^^^^^
+sqlite3.OperationalError: table projects has no column named project_id
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+Traceback (most recent call last):
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 43, in <module>
+    tsk_id = add_task(conn, task)
+  File "c:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\insert_data.py", line 21, in add_task
+    cur.execute(sql, task)
+    ~~~~~~~~~~~^^^^^^^^^^^
+sqlite3.OperationalError: 5 values for 6 columns
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> pip install ipython
+Collecting ipython
+  Downloading ipython-9.14.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting colorama>=0.4.4 (from ipython)
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting decorator>=5.1.0 (from ipython)
+  Using cached decorator-5.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting ipython-pygments-lexers>=1.0.0 (from ipython)
+  Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting jedi>=0.18.2 (from ipython)
+  Using cached jedi-0.20.0-py2.py3-none-any.whl.metadata (23 kB)
+Collecting matplotlib-inline>=0.1.6 (from ipython)
+  Downloading matplotlib_inline-0.2.2-py3-none-any.whl.metadata (2.4 kB)
+Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython)
+  Using cached prompt_toolkit-3.0.52-py3-none-any.whl.metadata (6.4 kB)
+Collecting psutil>=7 (from ipython)
+  Downloading psutil-7.2.2-cp37-abi3-win_amd64.whl.metadata (22 kB)
+Collecting pygments>=2.14.0 (from ipython)
+  Using cached pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting stack_data>=0.6.0 (from ipython)
+  Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+Collecting traitlets>=5.13.0 (from ipython)
+  Downloading traitlets-5.15.1-py3-none-any.whl.metadata (10 kB)
+Collecting wcwidth (from prompt_toolkit<3.1.0,>=3.0.41->ipython)
+  Downloading wcwidth-0.8.1-py3-none-any.whl.metadata (43 kB)
+Collecting parso<0.9.0,>=0.8.6 (from jedi>=0.18.2->ipython)
+  Using cached parso-0.8.7-py2.py3-none-any.whl.metadata (8.2 kB)
+Collecting executing>=1.2.0 (from stack_data>=0.6.0->ipython)
+  Downloading executing-2.2.1-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting asttokens>=2.1.0 (from stack_data>=0.6.0->ipython)
+  Downloading asttokens-3.0.1-py3-none-any.whl.metadata (4.9 kB)
+Collecting pure-eval (from stack_data>=0.6.0->ipython)
+  Downloading pure_eval-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+Downloading ipython-9.14.1-py3-none-any.whl (627 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 627.8/627.8 kB 7.2 MB/s  0:00:00
+Using cached prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached decorator-5.3.1-py3-none-any.whl (10 kB)
+Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl (8.1 kB)
+Using cached jedi-0.20.0-py2.py3-none-any.whl (4.9 MB)
+Using cached parso-0.8.7-py2.py3-none-any.whl (107 kB)
+Downloading matplotlib_inline-0.2.2-py3-none-any.whl (9.5 kB)
+Downloading psutil-7.2.2-cp37-abi3-win_amd64.whl (137 kB)
+Using cached pygments-2.20.0-py3-none-any.whl (1.2 MB)
+Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
+Downloading asttokens-3.0.1-py3-none-any.whl (27 kB)
+Downloading executing-2.2.1-py2.py3-none-any.whl (28 kB)
+Downloading traitlets-5.15.1-py3-none-any.whl (85 kB)
+Downloading pure_eval-0.2.3-py3-none-any.whl (11 kB)
+Downloading wcwidth-0.8.1-py3-none-any.whl (323 kB)
+Installing collected packages: pure-eval, wcwidth, traitlets, pygments, psutil, parso, executing, decorator, colorama, asttokens, stack_data, prompt_toolkit, matplotlib-inline, jedi, ipython-pygments-lexers, ipython
+   ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  3/16 [pygments]  WARNING: The script pygmentize.exe is installed in 'C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━ 15/16 [ipython]  WARNING: The scripts ipython.exe and ipython3.exe are installed in 'C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed asttokens-3.0.1 colorama-0.4.6 decorator-5.3.1 executing-2.2.1 ipython-9.14.1 ipython-pygments-lexers-1.1.1 jedi-0.20.0 matplotlib-inline-0.2.2 parso-0.8.7 prompt_toolkit-3.0.52 psutil-7.2.2 pure-eval-0.2.3 pygments-2.20.0 stack_data-0.6.3 traitlets-5.15.1 wcwidth-0.8.1
+
+[notice] A new release of pip is available: 25.3 -> 26.1.2
+[notice] To update, run: C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe -m pip install --upgrade pip
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> ipython
+ipython : The term 'ipython' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, o
+r if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ipython
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ipython:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe -m pip show ipython
+
+Name: ipython
+Version: 9.14.1
+Summary: IPython: Productive Interactive Computing
+Home-page: https://ipython.org
+Author: The IPython Development Team
+Author-email: ipython-dev@python.org
+License-Expression: BSD-3-Clause
+Location: C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages
+Requires: colorama, decorator, ipython-pygments-lexers, jedi, matplotlib-inline, prompt_toolkit, psutil, pygments, stack_data, traitlets
+Required-by: 
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\Scripts\ipython.exe
+Python 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 9.14.1 -- An enhanced Interactive Python. Type '?' for help.
+Tip: IPython 9.0+ has hooks to integrate AI/LLM completions.
+Ctrl click to launch VS Code Native REPL
+
+In [1]: from select_data.py import *
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Cell In[1], line 1
+----> 1 from select_data.py import *
+
+ModuleNotFoundError: No module named 'select_data.py'; 'select_data' is not a package
+
+In [2]: from select_data import *
+
+In [3]: conn = create_connection("database.db")
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[3], line 1
+----> 1 conn = create_connection("database.db")
+
+NameError: name 'create_connection' is not defined
+
+In [4]: from conn import *
+
+In [5]: conn = create_connection("database.db")
+Connected to database.db, sqlite version: 3.50.4
+
+In [6]: select_all(conn, "projects")
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[6], line 1
+----> 1 select_all(conn, "projects")
+
+NameError: name 'select_all' is not defined
+
+In [7]: select_all(conn, "projects")
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[7], line 1
+----> 1 select_all(conn, "projects")
+
+NameError: name 'select_all' is not defined
+
+In [8]: dir()
+Out[8]: 
+['Error',
+ 'In',
+ 'Out',
+ 'PS1',
+ 'REPLHooks',
+ '_',
+ '__',
+ '___',
+ '__builtin__',
+ '__builtins__',
+ '__doc__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__',
+ '_dh',
+ '_i',
+ '_i1',
+ '_i2',
+ '_i3',
+ '_i4',
+ '_i5',
+ '_i6',
+ '_i7',
+ '_i8',
+ '_ih',
+ '_ii',
+ '_iii',
+ '_oh',
+ 'conn',
+ 'create_connection',
+ 'create_connection_in_memory',
+ 'exit',
+ 'get_ipython',
+ 'get_last_command',
+ 'is_wsl',
+ 'open',
+ 'original_ps1',
+ 'platform',
+ 'quit',
+ 'sqlite3',
+ 'sys']
+
+In [9]: from select_data import *
+
+In [10]: dir()
+Out[10]: 
+['Error',
+ 'In',
+ 'Out',
+ 'PS1',
+ 'REPLHooks',
+ '_',
+ '_8',
+ '__',
+ '___',
+ '__builtin__',
+ '__builtins__',
+ '__doc__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__',
+ '_dh',
+ '_i',
+ '_i1',
+ '_i10',
+ '_i2',
+ '_i3',
+ '_i4',
+ '_i5',
+ '_i6',
+ '_i7',
+ '_i8',
+ '_i9',
+ '_ih',
+ '_ii',
+ '_iii',
+ '_oh',
+ 'conn',
+ 'create_connection',
+ 'create_connection_in_memory',
+ 'exit',
+ 'get_ipython',
+ 'get_last_command',
+ 'is_wsl',
+ 'open',
+ 'original_ps1',
+ 'platform',
+ 'quit',
+ 'sqlite3',
+ 'sys']
+
+In [11]: import select_data
+
+In [12]: select_data
+Out[12]: <module 'select_data' from 'C:\\Users\\abram\\Desktop\\Kodilla\\learning-git-task\\db_training\\select_data.py'>
+
+In [13]: dir(select_data)
+Out[13]: 
+['__builtins__',
+ '__cached__',
+ '__doc__',
+ '__file__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__']
+
+In [14]: print(select_data.__file__)
+C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\select_data.py
+
+In [15]: dir(select_data)
+Out[15]: 
+['__builtins__',
+ '__cached__',
+ '__doc__',
+ '__file__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__']
+
+In [16]: exit
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> from select_data import *
+At line:1 char:1
++ from select_data import *
++ ~~~~
+The 'from' keyword is not supported in this version of the language.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ReservedKeywordNotAllowed
+ 
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> ipython
+ipython : The term 'ipython' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, o
+r if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ipython
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ipython:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> python -m IPython
+Program 'python.exe' failed to run: System nie może odnaleźć określonej ścieżkiAt line:1 char:1
++ python -m IPython
++ ~~~~~~~~~~~~~~~~~.
+At line:1 char:1
++ python -m IPython
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [], ApplicationFailedException
+    + FullyQualifiedErrorId : NativeCommandFailed
+ 
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe -m IPython
+Python 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 9.14.1 -- An enhanced Interactive Python. Type '?' for help.
+Tip: Use `ipython --help-all | less` to view all the IPython configuration options.
+Ctrl click to launch VS Code Native REPL
+
+In [1]: from select_data import *
+
+In [2]: from conn import *
+
+In [3]: conn = create_connection("database.db")
+Connected to database.db, sqlite version: 3.50.4
+
+In [4]: select_all(conn, "projects")
+Out[4]: 
+[(1, 'Zrób zadania', '2020-05-08 00:00:00', '2020-05-10 00:00:00'),
+ (2, 'Zrób zadania 2', '2020-05-08 00:00:00', '2020-05-10 00:00:00'),
+ (3, 'Powtórka z angielskiego', '2020-05-11 00:00:00', '2020-05-13 00:00:00')]
+
+In [5]: select_all(conn, "tasks")
+Out[5]: 
+[(1,
+  1,
+  'Nauka słówek',
+  'Nauka języka angielskiego czasowniki',
+  'Rozpoczęte',
+  '2020-05-11 00:00:00',
+  '2020-05-13 00:00:00')]
+
+In [6]: select_where(conn, "tasks", project_id=1)
+Out[6]: 
+[(1,
+  1,
+  'Nauka słówek',
+  'Nauka języka angielskiego czasowniki',
+  'Rozpoczęte',
+  '2020-05-11 00:00:00',
+  '2020-05-13 00:00:00')]
+
+In [7]: select_where(conn, "tasks", status="ended")
+Out[7]: []
+
+In [8]: 
