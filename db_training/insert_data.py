@@ -8,4 +8,5 @@ sql = """INSERT INTO projects(id, nazwa, start_date, end_date)
            "2020-05-08 00:00:00",
            "2020-05-10 00:00:00");"""
 execute_sql(conn, sql)
+conn.commit()
 conn.close()
