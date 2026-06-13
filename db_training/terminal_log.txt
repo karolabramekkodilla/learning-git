@@ -634,4 +634,31 @@ OK
 no such column: stat
 PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> Stop-Transcript                                                                      
 Transcript stopped, output file is C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\terminal_log.txt
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/update_data.py
+Connected to database.db, sqlite version: 3.50.4
+OK
+no such column: stat
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/update_data.py
+Connected to database.db, sqlite version: 3.50.4
+OK
+OK
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/delete_data.py
+Connected to database.db, sqlite version: 3.50.4
+Deleted
+Deleted
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/insert_data.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/delete_data.py
+Connected to database.db, sqlite version: 3.50.4
+Deleted
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/select_data.py
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/select_data.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/select_data.py
+Connected to database.db, sqlite version: 3.50.4
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/select_data.py
+Connected to database.db, sqlite version: 3.50.4
+[(1, 1, 'Nauka słówek', 'Nauka języka angielskiego rzeczowniki', 'Rozpoczęte', '2020-05-11 00:00:00', '2020-05-13 00:00:00'), (2, 1, 'Nauka słówek', 'Nauka języka angielskiego czasy', 'Rozpoczęte', '2020-05-11 00:00:00', '2020-05-13 00:00:00')]
 PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> 

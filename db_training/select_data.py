@@ -44,3 +44,9 @@ def select_where(conn, table, **query):
    cur.execute(f"SELECT * FROM {table} WHERE {q}", values)
    rows = cur.fetchall()
    return rows
+
+if __name__ == "__main__":
+   conn = create_connection("database.db")
+   selected = select_all(conn, "tasks")
+   print(selected)
+   conn.close()
