@@ -557,4 +557,81 @@ Out[6]:
 In [7]: select_where(conn, "tasks", status="ended")
 Out[7]: []
 
-In [8]: 
+In [8]: C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/update_data.py
+      ⋮ 
+  Cell In[8], line 1
+    C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/update_data.py
+       ^
+SyntaxError: unexpected character after line continuation character
+
+
+In [9]: exit
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/update_data.py
+Connected to database.db, sqlite version: 3.50.4
+OK
+no such column: stat
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> Start-Transcript -Path terminal_log.txt -Append
+Transcript started, output file is terminal_log.txt
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/update_data.py
+Connected to database.db, sqlite version: 3.50.4
+OK
+no such column: stat
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> from select_data import *                                                            
+At line:1 char:1                                          
++ from select_data import *
++ ~~~~
+The 'from' keyword is not supported in this version of the language.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ReservedKeywordNotAllowed
+ 
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> update_data.py
+update_data.py : The term 'update_data.py' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling 
+of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ update_data.py
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (update_data.py:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+Suggestion [3,General]: The command update_data.py was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\update_data.py". See "get-help about_Command_Precedence" for more details.
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> py update_data.py
+Connected to database.db, sqlite version: 3.50.4
+OK
+no such column: stat
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> python update_data.py *>> terminal_log.txt
+out-file : Proces nie może uzyskać dostępu do pliku „C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\terminal_log.txt”, ponieważ jest on
+ używany przez inny proces.
+At line:1 char:1
++ python update_data.py *>> terminal_log.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+ 
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> py update_data.py *>> terminal_log.txt    
+out-file : Proces nie może uzyskać dostępu do pliku „C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\terminal_log.txt”, ponieważ jest on
+ używany przez inny proces.
+At line:1 char:1
++ py update_data.py *>> terminal_log.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+ 
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> Stop-Transcript
+Transcript stopped, output file is C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\terminal_log.txt
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> py update_data.py *>> terminal_log.txt
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> function pyrun { py $args *>> terminal_log.txt }
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> pyrun update_data.py
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> Start-Transcript -Path terminal_log.txt -Append                                      
+Transcript started, output file is terminal_log.txt       
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/update_data.py
+Connected to database.db, sqlite version: 3.50.4
+OK
+no such column: stat
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> & C:\Users\abram\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/abram/Desktop/Kodilla/learning-git-task/db_training/update_data.py
+Connected to database.db, sqlite version: 3.50.4
+OK
+no such column: stat
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> Stop-Transcript                                                                      
+Transcript stopped, output file is C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training\terminal_log.txt
+PS C:\Users\abram\Desktop\Kodilla\learning-git-task\db_training> 
