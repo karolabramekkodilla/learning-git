@@ -9,5 +9,6 @@ def execute_sql(conn, sql):
    try:
        c = conn.cursor()
        c.execute(sql)
+       print("Wykonano SQL")
    except Error as e:
        print(e)
