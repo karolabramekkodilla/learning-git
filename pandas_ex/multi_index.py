@@ -15,13 +15,31 @@ multi_index_list
 df.index = pd.MultiIndex.from_tuples(multi_index_list,names=['School','Student'])
 d1 = df
 
-exam4 = [1,1,1,1]
-exam5 = [1,1,1,1]
-exam6 = [1,1,1,1]
+exam4 = np.random.randint(0, 101, size=4)
+exam5 = np.random.randint(0, 101, size=4)
+exam6 = np.random.randint(0, 101, size=4)
 
 df = pd.DataFrame({'e4':exam4, 'e5':exam5, 'e6':exam6}, index=labels)
-d2 = df['semester2'] = df['e4']+df['e5']+df['e6']
-d3  = d1 + d2
+df['semester2'] = df['e4']+df['e5']+df['e6']
+df.index = d1.index
+d2 = df
+
+
+d3 = pd.concat([d1, d2], axis=1)
+
+d3.drop('semester1',axis=1,inplace=True)
+d3.drop('semester2',axis=1,inplace=True)
+
+multi_index_list = [
+    ('semester1', 'e1'),
+    ('semester1', 'e2'),
+    ('semester1', 'e3'),
+    ('semester2', 'e4'),
+    ('semester2', 'e5'),
+    ('semester2', 'e6')
+]
+d3.columns = pd.MultiIndex.from_tuples(multi_index_list,names=['semester','exam'])
+
 print("d1")
 print(d1)
 print("d2")
