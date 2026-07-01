@@ -49,3 +49,41 @@ plt.ylabel("Liczba interwencji")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
+
+import requests
+import pandas as pd
+from io import StringIO
+
+url1 = "https://simple.wikipedia.org/wiki/List_of_U.S._states_by_population"
+url2 = "https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations"
+
+headers = {
+    "User-Agent": "Mozilla/5.0"
+}
+
+response1 = requests.get(url1, headers=headers)
+print(response1.status_code)
+html = response1.text
+data1 = pd.read_html(StringIO(html), header=0)[0]
+
+print(data1)
+
+response2 = requests.get(url2, headers=headers)
+print(response2.status_code)
+html = response2.text
+data2 = pd.read_html(StringIO(html), header=0)[1]
+
+print(data2)
+
+population = pd.merge(data1, data2, left_on="State", right_on="Name")
+population = population[["USPS (& ANSI)", "Census population, April 1, 2020 [1][2]"]]
+population["Census population, April 1, 2020 [1][2]"] = population["Census population, April 1, 2020 [1][2]"] / 1000
+print(population)
+
+incidents = df["state"].value_counts().reset_index()
+incidents.columns = ["state", "incidents"]
+print(incidents)
+
+result = pd.merge(incidents,population,left_on="state",right_on="USPS (& ANSI)")
+result["incidents_per_1000"] = (result["incidents"] / result["Census population, April 1, 2020 [1][2]"])
+print(result)
