@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Punkt 1
+# Punkt pierwszy
 df_gen = pd.read_csv('tmdb_genres.csv')
 df_mov = pd.read_csv('tmdb_movies.csv')
 print(df_gen.head())
