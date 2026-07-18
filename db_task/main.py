@@ -32,7 +32,7 @@ def add_clean_measure(conn, measure):
    :param measure:
    :return: station
    """
-   sql = '''INSERT INTO clean_measure(station, date, precip, tobs)
+   sql = '''INSERT OR IGNORE INTO clean_measure(station, date, precip, tobs)
              VALUES(?,?,?,?)'''
    cur = conn.cursor()
    cur.execute(sql, measure)
@@ -46,7 +46,7 @@ def add_clean_station(conn, station):
    :param station:
    :return: station
    """
-   sql = '''INSERT INTO clean_stations(station, latitude, longitude, elevation, name, country, state)
+   sql = '''INSERT OR IGNORE INTO clean_stations(station, latitude, longitude, elevation, name, country, state)
              VALUES(?,?,?,?,?,?,?)'''
    cur = conn.cursor()
    cur.execute(sql, station)
@@ -110,6 +110,7 @@ if __name__ == "__main__":
         precip REAL,
         tobs INTEGER,
         FOREIGN KEY (station) REFERENCES clean_stations (station)
+        UNIQUE(station, date)
         );
         """
     execute_sql(conn, sql)
