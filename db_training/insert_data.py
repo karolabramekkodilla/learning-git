@@ -42,11 +42,35 @@ conn = create_connection("database.db")
 # task = ("1","Nauka słówek", "Nauka języka angielskiego czasowniki", "Rozpoczęte", "2020-05-11 00:00:00", "2020-05-13 00:00:00")
 # tsk_id = add_task(conn, task)
 # Więcej danych do bazy
-task = ("1","Nauka słówek", "Nauka języka angielskiego rzeczowniki", "Rozpoczęte", "2020-05-11 00:00:00", "2020-05-13 00:00:00")
-tsk_id = add_task(conn, task)
-task = ("1","Nauka słówek", "Nauka języka angielskiego czasy", "Rozpoczęte", "2020-05-11 00:00:00", "2020-05-13 00:00:00")
-tsk_id = add_task(conn, task)
-task = ("1","Nauka słówek", "Nauka języka angielskiego past perfekt", "Rozpoczęte", "2020-05-11 00:00:00", "2020-05-13 00:00:00")
-tsk_id = add_task(conn, task)
+tasks = [
+    (
+        1,
+        "Nauka słówek",
+        "Nauka języka angielskiego rzeczowniki",
+        "Rozpoczęte",
+        "2020-05-11 00:00:00",
+        "2020-05-13 00:00:00",
+    ),
+    (
+        1,
+        "Nauka słówek",
+        "Nauka języka angielskiego czasy",
+        "Rozpoczęte",
+        "2020-05-11 00:00:00",
+        "2020-05-13 00:00:00",
+    ),
+    (
+        1,
+        "Nauka słówek",
+        "Nauka języka angielskiego past perfect",
+        "Rozpoczęte",
+        "2020-05-11 00:00:00",
+        "2020-05-13 00:00:00",
+    ),
+]
+
+for task in tasks:
+    task_id = add_task(conn, task)
+
 conn.commit()
 conn.close()

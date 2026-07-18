@@ -1,6 +1,6 @@
 from conn import create_connection
 from execute_sql import execute_sql
-
+ALLOWED_TABLES = {"tasks", "projects"}
 def select_task_by_status(conn, status):
    """
    Query tasks by priority
@@ -27,6 +27,8 @@ def select_all(conn, table):
    return rows
 
 def select_where(conn, table, **query):
+   if table not in ALLOWED_TABLES:
+    raise ValueError(f"Nieznana tabela: {table}")
    """
    Query tasks from table with data from **query dict
    :param conn: the Connection object

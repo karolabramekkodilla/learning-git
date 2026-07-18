@@ -2,7 +2,11 @@ import sqlite3
 from conn import create_connection
 from execute_sql import execute_sql
 
+ALLOWED_TABLES = {"tasks", "projects"}
+
 def delete_where(conn, table, **kwargs):
+   if table not in ALLOWED_TABLES:
+    raise ValueError(f"Nieznana tabela: {table}")
    """
    Delete from table where attributes from
    :param conn:  Connection to the SQLite database

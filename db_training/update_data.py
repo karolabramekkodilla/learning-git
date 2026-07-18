@@ -1,8 +1,10 @@
 import sqlite3
 from conn import create_connection
 from execute_sql import execute_sql
-
+ALLOWED_TABLES = {"tasks", "projects"}
 def update(conn, table, id, **kwargs):
+   if table not in ALLOWED_TABLES:
+    raise ValueError(f"Nieznana tabela: {table}")
    """
    update status, begin_date, and end date of a task
    :param conn:
