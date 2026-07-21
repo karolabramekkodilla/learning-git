@@ -6,6 +6,7 @@ from dash.dependencies import Input, Output
 import tab1
 import tab2
 import plotly.graph_objects as go
+import dash_auth
 
 
 class db:
@@ -54,6 +55,9 @@ df.merge()
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = Dash(__name__, external_stylesheets=external_stylesheets,suppress_callback_exceptions=True)
+USERNAME_PASSWORD = [['user','pass']]
+
+auth = dash_auth.BasicAuth(app, USERNAME_PASSWORD)
 
 @app.callback(Output('tabs-content','children'),[Input('tabs','value')])
 def render_content(tab):
