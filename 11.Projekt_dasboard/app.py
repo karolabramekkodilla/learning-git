@@ -17,8 +17,6 @@ class db:
         self.customers = pd.read_csv(r'db\customers.csv',index_col=0)
         self.prod_info = pd.read_csv(r'db\prod_cat_info.csv')
 
-# Klasa poprzez konstruktor wczytuje pliki i przechowuje wyniki i nazywa się db co sugeruje bazę danych :(
-
     @staticmethod
     def transaction_init():
         transactions = pd.DataFrame()
