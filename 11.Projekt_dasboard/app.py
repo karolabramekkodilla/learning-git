@@ -5,6 +5,7 @@ from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 import tab1
 import tab2
+import tab3
 import plotly.graph_objects as go
 import dash_auth
 
@@ -46,10 +47,14 @@ class db:
         .set_index('customer_Id'),on='cust_id')
 
         self.merged = df
+    
+    def add_trade_day(self):
+        self.merged['trade_day'] = self.merged['tran_date'].dt.day_name()
 
 df = db()
 df.merge()
-
+df.add_trade_day()
+print(df.merged.head(10))
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -66,6 +71,8 @@ def render_content(tab):
         return tab1.render_tab(df.merged)
     elif tab == 'tab-2':
         return tab2.render_tab(df.merged)
+    elif tab == 'tab-3':
+        return tab3.render_tab(df.merged)
 
 ## tab1 callbacks
 @app.callback(Output('bar-sales','figure'),
@@ -113,9 +120,49 @@ def tab2_barh_prod_subcat(chosen_cat):
     fig = go.Figure(data=data,layout=go.Layout(barmode='stack',margin={'t':20,}))
     return fig
 
+## tab3 callbacks
+@app.callback(Output('tab3-bar-sales-by-day','figure'),
+            [Input('tab3-sales-range','start_date'),Input('tab3-sales-range','end_date')])
+
+def tab3_sales_by_day(start_date,end_date):
+    print("CALLBACK TAB 3 URUCHOMIONY")
+    truncated = df.merged[(df.merged['tran_date']>=start_date)&(df.merged['tran_date']<=end_date)]
+    grouped = truncated[truncated['total_amt']>0].groupby('trade_day')['total_amt'].sum().round(2)
+    days_order = [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+            'Sunday'
+        ]
+    grouped = grouped.reindex(days_order, fill_value=0)
+    traces = []
+
+    traces.append(
+        go.Bar(
+            x=grouped.index,
+            y=grouped.values,
+            hoverinfo='text',
+            hovertext=[
+                f'{y / 1e3:.2f}k'
+                for y in grouped.values
+            ]
+        )
+    )
+    data = traces
+    fig = go.Figure(data=data,layout=go.Layout(title='Przychody według dnia tygodnia',barmode='stack',legend=dict(x=0,y=-0.5)))
+    return fig
+
+def tab3_clients_by_store_type():
+    pass
+
+
 app.layout = html.Div([html.Div([dcc.Tabs(id='tabs',value='tab-1',children=[
                             dcc.Tab(label='Sprzedaż globalna',value='tab-1'),
-                            dcc.Tab(label='Produkty',value='tab-2')
+                            dcc.Tab(label='Produkty',value='tab-2'),
+                            dcc.Tab(label='Kanały sprzedaży',value='tab-3')
                             ]),
                             html.Div(id='tabs-content')
                     ],style={'width':'80%','margin':'auto'})],
