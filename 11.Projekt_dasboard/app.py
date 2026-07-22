@@ -51,10 +51,39 @@ class db:
     def add_trade_day(self):
         self.merged['trade_day'] = self.merged['tran_date'].dt.day_name()
 
+    def add_age_when_transaction_done(self):
+        self.merged["DOB"] = pd.to_datetime(self.merged["DOB"],dayfirst=True)
+        self.merged['age'] = ((self.merged["tran_date"] - self.merged["DOB"]).dt.days / 365.25).astype(int)
+        bins = [0, 25, 35, 45, 55, 150]
+        labels = ["18-25", "26-35", "36-45", "46-55", "56+"]
+        self.merged["age_group"] = pd.cut(self.merged["age"],bins=bins,labels=labels)
+
 df = db()
 df.merge()
+# Dodanie dnia tygodnia do df w celu wyświetlenia pierwszego wykresu tab 3
 df.add_trade_day()
 print(df.merged.head(10))
+# Sprawdzanie danych do wyświetlenia informacji o klientach
+print(df.merged["Store_type"].value_counts())
+print(df.merged["country"].value_counts())
+print(df.merged["country"].nunique())
+# Jest tylko 10 krajów można by je wrzucić do listy o ile w ogóle w danych są między nimi jakieś znaczące różnice bo może nie ma sensu jezeli są podobne
+print(pd.crosstab(df.merged["Store_type"], df.merged["country"], normalize="index") * 100)
+# Sprawdzenie zależności gender od typów sklepów
+print(pd.crosstab(df.merged["Store_type"], df.merged["Gender"], normalize="index") * 100)
+#  Sprawdzenie zależności wieku i typu kanału sprzedaży
+print(pd.crosstab(df.merged["Store_type"], df.merged["DOB"], normalize="index") * 100)
+print(df.merged["DOB"].min(), df.merged["DOB"].max())
+print(df.merged["tran_date"].min(), df.merged["tran_date"].max())
+# Dodanie przedziałów wiekowych do danych
+df.add_age_when_transaction_done()
+print(pd.crosstab(df.merged["Store_type"], df.merged["age_group"], normalize="index") * 100)
+# Dane są raczej sfabrykowane pod ćwiczenia tutaj nie ma za wiele do pokazania zarządowi przynajmniej w pod tym kątem
+# Jeszcze tylko sprawdziłbym coś co zapewne jest zwrotem towaru.
+returns = df.merged[df.merged["total_amt"] < 0]
+print(pd.crosstab(returns["country"],returns["Store_type"]))
+# Analiza struktury klientów według kraju, płci oraz grup wiekowych nie wykazała istotnych różnic pomiędzy kanałami sprzedaży.
+
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -125,9 +154,9 @@ def tab2_barh_prod_subcat(chosen_cat):
             [Input('tab3-sales-range','start_date'),Input('tab3-sales-range','end_date')])
 
 def tab3_sales_by_day(start_date,end_date):
-    print("CALLBACK TAB 3 URUCHOMIONY")
+    # print("CALLBACK TAB 3 URUCHOMIONY")
     truncated = df.merged[(df.merged['tran_date']>=start_date)&(df.merged['tran_date']<=end_date)]
-    grouped = truncated[truncated['total_amt']>0].groupby('trade_day')['total_amt'].sum().round(2)
+    grouped = truncated[truncated['total_amt']>0].groupby(['trade_day','Store_type'])['total_amt'].sum().round(2).unstack(fill_value=0)
     days_order = [
             'Monday',
             'Tuesday',
@@ -139,26 +168,31 @@ def tab3_sales_by_day(start_date,end_date):
         ]
     grouped = grouped.reindex(days_order, fill_value=0)
     traces = []
-
-    traces.append(
-        go.Bar(
-            x=grouped.index,
-            y=grouped.values,
-            hoverinfo='text',
-            hovertext=[
-                f'{y / 1e3:.2f}k'
-                for y in grouped.values
-            ]
-        )
-    )
+    for col in grouped.columns:
+            traces.append(go.Bar(x=grouped.index,y=grouped[col],name=col,hoverinfo='text',
+            hovertext=[f'{y/1e3:.2f}k' for y in grouped[col].values]))
+    
     data = traces
-    fig = go.Figure(data=data,layout=go.Layout(title='Przychody według dnia tygodnia',barmode='stack',legend=dict(x=0,y=-0.5)))
+    fig = go.Figure(data=data,layout=go.Layout(title='Przychody według dnia tygodnia',barmode='group',legend=dict(x=0,y=-0.5)))
     return fig
 
-def tab3_clients_by_store_type():
-    pass
+@app.callback(
+    Output("tab3-sales-secondary-chart", "figure"),
+    [Input("tab3-sales-range", "start_date"),Input("tab3-sales-range", "end_date")])
 
+def tab3_clients_by_store_type(start_date, end_date):
 
+    truncated = df.merged[(df.merged['tran_date']>=start_date)&(df.merged['tran_date']<=end_date)]
+    grouped = (pd.crosstab(truncated["Store_type"],truncated["Gender"],normalize="index") * 100)
+
+    traces = []
+
+    for gender in grouped.columns:
+        traces.append(go.Bar(x=grouped.index,y=grouped[gender],name=gender,hoverinfo="text",hovertext=[f"{value:.2f}%" for value in grouped[gender]]))
+    data = traces
+    fig = go.Figure(data=data,layout=go.Layout(title='Struktura płci klientów według kanału sprzedaży',barmode='group',legend=dict(x=0,y=-0.5)))
+    return fig
+    
 app.layout = html.Div([html.Div([dcc.Tabs(id='tabs',value='tab-1',children=[
                             dcc.Tab(label='Sprzedaż globalna',value='tab-1'),
                             dcc.Tab(label='Produkty',value='tab-2'),
