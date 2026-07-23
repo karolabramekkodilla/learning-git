@@ -82,6 +82,22 @@ returns = df.merged[df.merged["total_amt"] < 0]
 print(pd.crosstab(returns["country"],returns["Store_type"]))
 # Analiza struktury klientów według kraju, płci oraz grup wiekowych nie wykazała istotnych różnic pomiędzy kanałami sprzedaży.
 
+# Sprawdzenie czy dla zwrotu istnieje transakcja odwrotna
+print(df.merged[df.merged["cust_id"] == 273764].sort_values("tran_date"))
+# Istnieje to samo transaction_id więc można takie transakcje odrzucić w drugim wykresie
+duplicates = df.merged["transaction_id"].value_counts()
+
+print(duplicates[duplicates > 1])
+print(df.merged[df.merged["transaction_id"] == 426787191].sort_values("tran_date"))
+print(df.merged[df.merged["transaction_id"] == 4170892941].sort_values("tran_date"))
+
+# counts = df.merged["transaction_id"].value_counts()
+# ids_2 = counts[counts == 2].index
+# duplicates_2 = df.merged[df.merged["transaction_id"].isin(ids_2)]
+# summary = duplicates_2.groupby("transaction_id")["total_amt"].sum()
+# print(summary[summary != 0])
+# print((duplicates[duplicates > 1]).count())
+print(duplicates[duplicates > 1].value_counts().sort_index())
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -154,7 +170,7 @@ def tab2_barh_prod_subcat(chosen_cat):
 def tab3_sales_by_day(start_date,end_date):
     # print("CALLBACK TAB 3 URUCHOMIONY")
     truncated = df.merged[(df.merged['tran_date']>=start_date)&(df.merged['tran_date']<=end_date)]
-    grouped = truncated[truncated['total_amt']>0].groupby(['trade_day','Store_type'])['total_amt'].sum().round(2).unstack(fill_value=0)
+    grouped = truncated.groupby(['trade_day','Store_type'])['total_amt'].sum().round(2).unstack(fill_value=0)
     days_order = [
             'Monday',
             'Tuesday',
@@ -171,7 +187,7 @@ def tab3_sales_by_day(start_date,end_date):
             hovertext=[f'{y/1e3:.2f}k' for y in grouped[col].values]))
     
     data = traces
-    fig = go.Figure(data=data,layout=go.Layout(title='Przychody według dnia tygodnia',barmode='group',legend=dict(x=0,y=-0.5)))
+    fig = go.Figure(data=data,layout=go.Layout(title='Sprzedaż według dnia tygodnia',barmode='group',legend=dict(x=0,y=-0.5)))
     return fig
 
 @app.callback(
