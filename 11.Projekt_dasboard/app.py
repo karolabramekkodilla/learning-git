@@ -55,49 +55,62 @@ class db:
         bins = [0, 25, 35, 45, 55, 150]
         labels = ["18-25", "26-35", "36-45", "46-55", "56+"]
         self.merged["age_group"] = pd.cut(self.merged["age"],bins=bins,labels=labels)
+    def flag_transaction_multi_entry(self):
+        self.merged["multi_entry_flag"] = (self.merged["transaction_id"].duplicated(keep=False))
 
 df = db()
 df.merge()
 # Dodanie dnia tygodnia do df w celu wyświetlenia pierwszego wykresu tab 3
 df.add_trade_day()
-print(df.merged.head(10))
+df.flag_transaction_multi_entry()
+df.add_age_when_transaction_done()
+print(df.merged[["Qty", "Rate", "Tax", "total_amt"]].head(10))
 # Sprawdzanie danych do wyświetlenia informacji o klientach
 print(df.merged["Store_type"].value_counts())
 print(df.merged["country"].value_counts())
 print(df.merged["country"].nunique())
-# Jest tylko 10 krajów można by je wrzucić do listy o ile w ogóle w danych są między nimi jakieś znaczące różnice bo może nie ma sensu jezeli są podobne
-print(pd.crosstab(df.merged["Store_type"], df.merged["country"], normalize="index") * 100)
-# Sprawdzenie zależności gender od typów sklepów
-print(pd.crosstab(df.merged["Store_type"], df.merged["Gender"], normalize="index") * 100)
-#  Sprawdzenie zależności wieku i typu kanału sprzedaży
-print(pd.crosstab(df.merged["Store_type"], df.merged["DOB"], normalize="index") * 100)
-print(df.merged["DOB"].min(), df.merged["DOB"].max())
-print(df.merged["tran_date"].min(), df.merged["tran_date"].max())
-# Dodanie przedziałów wiekowych do danych
-df.add_age_when_transaction_done()
-print(pd.crosstab(df.merged["Store_type"], df.merged["age_group"], normalize="index") * 100)
-# Dane są raczej sfabrykowane pod ćwiczenia tutaj nie ma za wiele do pokazania zarządowi przynajmniej w pod tym kątem
-# Jeszcze tylko sprawdziłbym coś co zapewne jest zwrotem towaru.
-returns = df.merged[df.merged["total_amt"] < 0]
-print(pd.crosstab(returns["country"],returns["Store_type"]))
-# Analiza struktury klientów według kraju, płci oraz grup wiekowych nie wykazała istotnych różnic pomiędzy kanałami sprzedaży.
+# # Jest tylko 10 krajów można by je wrzucić do listy o ile w ogóle w danych są między nimi jakieś znaczące różnice bo może nie ma sensu jezeli są podobne
+# print(pd.crosstab(df.merged["Store_type"], df.merged["country"], normalize="index") * 100)
+# # Sprawdzenie zależności gender od typów sklepów
+# print(pd.crosstab(df.merged["Store_type"], df.merged["Gender"], normalize="index") * 100)
+# #  Sprawdzenie zależności wieku i typu kanału sprzedaży
+# print(pd.crosstab(df.merged["Store_type"], df.merged["DOB"], normalize="index") * 100)
+# print(df.merged["DOB"].min(), df.merged["DOB"].max())
+# print(df.merged["tran_date"].min(), df.merged["tran_date"].max())
+# # Dodanie przedziałów wiekowych do danych
+# 
+# print(pd.crosstab(df.merged["Store_type"], df.merged["age_group"], normalize="index") * 100)
+# # Dane są raczej sfabrykowane pod ćwiczenia tutaj nie ma za wiele do pokazania zarządowi przynajmniej w pod tym kątem
+# # Jeszcze tylko sprawdziłbym coś co zapewne jest zwrotem towaru.
+# returns = df.merged[df.merged["total_amt"] < 0]
+# print(pd.crosstab(returns["country"],returns["Store_type"]))
+# # Analiza struktury klientów według kraju, płci oraz grup wiekowych nie wykazała istotnych różnic pomiędzy kanałami sprzedaży.
 
-# Sprawdzenie czy dla zwrotu istnieje transakcja odwrotna
-print(df.merged[df.merged["cust_id"] == 273764].sort_values("tran_date"))
-# Istnieje to samo transaction_id więc można takie transakcje odrzucić w drugim wykresie
-duplicates = df.merged["transaction_id"].value_counts()
+# # Sprawdzenie czy dla zwrotu istnieje transakcja odwrotna
+# print(df.merged[df.merged["cust_id"] == 273764].sort_values("tran_date"))
+# # Istnieje to samo transaction_id więc można takie transakcje odrzucić w drugim wykresie
+# duplicates = df.merged["transaction_id"].value_counts()
 
-print(duplicates[duplicates > 1])
-print(df.merged[df.merged["transaction_id"] == 426787191].sort_values("tran_date"))
-print(df.merged[df.merged["transaction_id"] == 4170892941].sort_values("tran_date"))
+# print(duplicates[duplicates > 1])
+# print(df.merged[df.merged["transaction_id"] == 426787191].sort_values("tran_date"))
+# print(df.merged[df.merged["transaction_id"] == 4170892941].sort_values("tran_date"))
 
-# counts = df.merged["transaction_id"].value_counts()
-# ids_2 = counts[counts == 2].index
-# duplicates_2 = df.merged[df.merged["transaction_id"].isin(ids_2)]
-# summary = duplicates_2.groupby("transaction_id")["total_amt"].sum()
-# print(summary[summary != 0])
-# print((duplicates[duplicates > 1]).count())
-print(duplicates[duplicates > 1].value_counts().sort_index())
+
+# # counts = df.merged["transaction_id"].value_counts()
+# # ids_2 = counts[counts == 2].index
+# # duplicates_2 = df.merged[df.merged["transaction_id"].isin(ids_2)]
+# # summary = duplicates_2.groupby("transaction_id")["total_amt"].sum()
+# # print(summary[summary != 0])
+# # print((duplicates[duplicates > 1]).count())
+# print(duplicates[duplicates > 1].value_counts().sort_index())
+print(df.merged[df.merged["transaction_id"] == 97439039119].sort_values("tran_date"))
+
+print(f'puste dane = \n{df.merged.isna().sum()}')
+#  nie ma znacząco dużo braków danych
+print(f'duplikaty = \n{df.merged.duplicated().sum()}')
+# 13 rekordów ma dokładne duplikaty w danych
+print(df.merged[df.merged.duplicated(keep=False)])
+# wszystkie są jednak ujemne nie będzie więc wiekszego problemu z odfiltrowaniem
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -169,7 +182,7 @@ def tab2_barh_prod_subcat(chosen_cat):
 
 def tab3_sales_by_day(start_date,end_date):
     # print("CALLBACK TAB 3 URUCHOMIONY")
-    truncated = df.merged[(df.merged['tran_date']>=start_date)&(df.merged['tran_date']<=end_date)]
+    truncated = df.merged[(df.merged['tran_date']>=start_date)&(df.merged['tran_date']<=end_date)&(df.merged['multi_entry_flag'] == False)&(df.merged['total_amt']>0)]
     grouped = truncated.groupby(['trade_day','Store_type'])['total_amt'].sum().round(2).unstack(fill_value=0)
     days_order = [
             'Monday',
@@ -196,13 +209,21 @@ def tab3_sales_by_day(start_date,end_date):
 
 def tab3_clients_by_store_type(start_date, end_date):
 
-    truncated = df.merged[(df.merged['tran_date']>=start_date)&(df.merged['tran_date']<=end_date)]
+    truncated = df.merged[(df.merged['tran_date']>=start_date)&(df.merged['tran_date']<=end_date)&(df.merged['multi_entry_flag'] == False)&(df.merged['total_amt']>0)]
+    # # wewnętrzny check danych po dofiltrowaniu multi entry
+    # print(f'liczba duplikatów po transaction id = {truncated["transaction_id"].duplicated().sum()}')
+    # print(f'liczba ujemnych transakcji = {(truncated["total_amt"]< 0).sum()}')
+    # # sprawdzenie czym są pojedyncze transaction_id z ujemną wartością <- dodałem jednak jeszcze (df.merged['total_amt']>0)
+    # negative_single = truncated[truncated["total_amt"] < 0]
+    # print(negative_single[["transaction_id","tran_date","Qty","Rate","Tax","total_amt","Store_type","prod_cat","prod_subcat"]])
+
     grouped = (pd.crosstab(truncated["Store_type"],truncated["Gender"],normalize="index") * 100)
+    profits = truncated.groupby(['Store_type','Gender'])['total_amt'].sum().round(2).unstack(fill_value=0)
 
     traces = []
 
     for gender in grouped.columns:
-        traces.append(go.Bar(x=grouped.index,y=grouped[gender],name=gender,hoverinfo="text",hovertext=[f"{value:.2f}%" for value in grouped[gender]]))
+        traces.append(go.Bar(x=profits.index,y=profits[gender],name=gender,hoverinfo="text",hovertext=[f"{value:.2f}$ income" for value in profits[gender]]))
     data = traces
     fig = go.Figure(data=data,layout=go.Layout(title='Struktura płci klientów według kanału sprzedaży',barmode='group',legend=dict(x=0,y=-0.5)))
     return fig
