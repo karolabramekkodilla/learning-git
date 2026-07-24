@@ -225,7 +225,7 @@ def tab3_clients_by_store_type(start_date, end_date):
     for gender in grouped.columns:
         traces.append(go.Bar(x=profits.index,y=profits[gender],name=gender,hoverinfo="text",hovertext=[f"{value:.2f}$ income" for value in profits[gender]]))
     data = traces
-    fig = go.Figure(data=data,layout=go.Layout(title='Struktura płci klientów według kanału sprzedaży',barmode='group',legend=dict(x=0,y=-0.5)))
+    fig = go.Figure(data=data,layout=go.Layout(title='Przychody według płci klientów i kanału sprzedaży',barmode='group',legend=dict(x=0,y=-0.5)))
     return fig
     
 app.layout = html.Div([html.Div([dcc.Tabs(id='tabs',value='tab-1',children=[
