@@ -10,3 +10,11 @@ __pycache__/
 
 # VS Code
 .vscode/
+# Generated data
+19.Sieci_konwulcyjne/charts/
+19.Sieci_konwulcyjne/dataset/
+19.Sieci_konwulcyjne/history/
+
+# Saved models
+fashion_mnist_model_*.keras
+19.Sieci_konwulcyjne\kagglecatsanddogs_5340.zip
