@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/abram/Desktop/Kodilla/learning-git-task/19.Sieci_konwulcyjne/mlruns/972328042108214119/2ac90de713b2449d9eb347220e0f8e3e/artifacts
+end_time: 1789980094764
+entry_point_name: ''
+experiment_id: '972328042108214119'
+lifecycle_stage: active
+run_id: 2ac90de713b2449d9eb347220e0f8e3e
+run_name: youthful-grub-920
+run_uuid: 2ac90de713b2449d9eb347220e0f8e3e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980077709
+status: 3
+tags: []
+user_id: abram

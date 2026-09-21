@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/abram/Desktop/Kodilla/learning-git-task/19.Sieci_konwulcyjne/mlruns/972328042108214119/4fc0e7356aaf4a62b7f56ad6d1922724/artifacts
+end_time: 1789980094918
+entry_point_name: ''
+experiment_id: '972328042108214119'
+lifecycle_stage: active
+run_id: 4fc0e7356aaf4a62b7f56ad6d1922724
+run_name: sassy-conch-82
+run_uuid: 4fc0e7356aaf4a62b7f56ad6d1922724
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980077709
+status: 3
+tags: []
+user_id: abram
