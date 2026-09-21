@@ -1,0 +1,32 @@
+artifact_path: best_estimator
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+is_signature_from_type_hint: false
+mlflow_version: 2.22.5
+model_size_bytes: 392675
+model_uuid: 0fcb728f6de940e5bc103d1b5a28d9bb
+prompts: null
+run_id: c1bfe09910ca48f9b3de3ae74239f4ab
+signature:
+  inputs: '[{"type": "double", "name": "Pclass", "required": true}, {"type": "double",
+    "name": "Age", "required": true}, {"type": "double", "name": "SibSp", "required":
+    true}, {"type": "double", "name": "Parch", "required": true}, {"type": "double",
+    "name": "Fare", "required": true}, {"type": "boolean", "name": "Sex_male", "required":
+    true}, {"type": "boolean", "name": "Embarked_Q", "required": true}, {"type": "boolean",
+    "name": "Embarked_S", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-09-21 08:59:04.796594'

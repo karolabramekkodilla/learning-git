@@ -1,0 +1,13 @@
+digest: 7e7b4f9c
+name: Titanic Dataset
+profile: '{"num_rows": 891, "num_elements": 8910}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "PassengerId", "required": true},
+  {"type": "long", "name": "Survived", "required": true}, {"type": "long", "name":
+  "Pclass", "required": true}, {"type": "double", "name": "Age", "required": true},
+  {"type": "long", "name": "SibSp", "required": true}, {"type": "long", "name": "Parch",
+  "required": true}, {"type": "double", "name": "Fare", "required": true}, {"type":
+  "boolean", "name": "Sex_male", "required": true}, {"type": "boolean", "name": "Embarked_Q",
+  "required": true}, {"type": "boolean", "name": "Embarked_S", "required": true}]}'
+source: '{"tags": {"mlflow.user": "abram", "mlflow.source.name": "c:\\Users\\abram\\Desktop\\Kodilla\\learning-git-task\\.venv\\Lib\\site-packages\\ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

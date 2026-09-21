@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579873051806072332/2382c0bbd68d4b20b6fa748a50d7d64f/artifacts
+end_time: 1789980746938
+entry_point_name: ''
+experiment_id: '579873051806072332'
+lifecycle_stage: active
+run_id: 2382c0bbd68d4b20b6fa748a50d7d64f
+run_name: gifted-snipe-40
+run_uuid: 2382c0bbd68d4b20b6fa748a50d7d64f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980723222
+status: 3
+tags: []
+user_id: abram

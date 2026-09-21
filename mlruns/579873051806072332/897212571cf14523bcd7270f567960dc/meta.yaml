@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579873051806072332/897212571cf14523bcd7270f567960dc/artifacts
+end_time: 1789980746938
+entry_point_name: ''
+experiment_id: '579873051806072332'
+lifecycle_stage: active
+run_id: 897212571cf14523bcd7270f567960dc
+run_name: aged-lark-958
+run_uuid: 897212571cf14523bcd7270f567960dc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980723222
+status: 3
+tags: []
+user_id: abram

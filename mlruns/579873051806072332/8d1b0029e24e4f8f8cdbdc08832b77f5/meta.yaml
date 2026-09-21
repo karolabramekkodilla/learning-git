@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579873051806072332/8d1b0029e24e4f8f8cdbdc08832b77f5/artifacts
+end_time: 1789981151703
+entry_point_name: ''
+experiment_id: '579873051806072332'
+lifecycle_stage: active
+run_id: 8d1b0029e24e4f8f8cdbdc08832b77f5
+run_name: sincere-bass-96
+run_uuid: 8d1b0029e24e4f8f8cdbdc08832b77f5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980938605
+status: 3
+tags: []
+user_id: abram

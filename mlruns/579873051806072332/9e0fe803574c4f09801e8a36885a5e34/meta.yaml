@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579873051806072332/9e0fe803574c4f09801e8a36885a5e34/artifacts
+end_time: 1789981151703
+entry_point_name: ''
+experiment_id: '579873051806072332'
+lifecycle_stage: active
+run_id: 9e0fe803574c4f09801e8a36885a5e34
+run_name: stylish-bird-628
+run_uuid: 9e0fe803574c4f09801e8a36885a5e34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980938605
+status: 3
+tags: []
+user_id: abram

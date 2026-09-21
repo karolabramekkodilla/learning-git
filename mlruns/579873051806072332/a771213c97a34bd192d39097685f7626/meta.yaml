@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579873051806072332/a771213c97a34bd192d39097685f7626/artifacts
+end_time: 1789980746938
+entry_point_name: ''
+experiment_id: '579873051806072332'
+lifecycle_stage: active
+run_id: a771213c97a34bd192d39097685f7626
+run_name: tasteful-hog-735
+run_uuid: a771213c97a34bd192d39097685f7626
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980723222
+status: 3
+tags: []
+user_id: abram

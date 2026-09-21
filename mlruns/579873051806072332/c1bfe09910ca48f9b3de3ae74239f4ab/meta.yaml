@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579873051806072332/c1bfe09910ca48f9b3de3ae74239f4ab/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '579873051806072332'
+lifecycle_stage: active
+run_id: c1bfe09910ca48f9b3de3ae74239f4ab
+run_name: rogue-bird-89
+run_uuid: c1bfe09910ca48f9b3de3ae74239f4ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980938605
+status: 1
+tags: []
+user_id: abram

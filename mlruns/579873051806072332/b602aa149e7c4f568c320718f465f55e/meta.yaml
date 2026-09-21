@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579873051806072332/b602aa149e7c4f568c320718f465f55e/artifacts
+end_time: 1789980746938
+entry_point_name: ''
+experiment_id: '579873051806072332'
+lifecycle_stage: active
+run_id: b602aa149e7c4f568c320718f465f55e
+run_name: debonair-mink-765
+run_uuid: b602aa149e7c4f568c320718f465f55e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980723222
+status: 3
+tags: []
+user_id: abram

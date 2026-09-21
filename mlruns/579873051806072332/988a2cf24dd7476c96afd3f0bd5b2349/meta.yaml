@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579873051806072332/988a2cf24dd7476c96afd3f0bd5b2349/artifacts
+end_time: 1789980746938
+entry_point_name: ''
+experiment_id: '579873051806072332'
+lifecycle_stage: active
+run_id: 988a2cf24dd7476c96afd3f0bd5b2349
+run_name: powerful-doe-144
+run_uuid: 988a2cf24dd7476c96afd3f0bd5b2349
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789980723222
+status: 3
+tags: []
+user_id: abram
