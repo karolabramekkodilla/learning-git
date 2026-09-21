@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/abram/Desktop/Kodilla/learning-git-task/19.Sieci_konwulcyjne/mlruns/972328042108214119/a30de8b91fbb41d49e6225867802ba42/artifacts
+end_time: 1789979936312
+entry_point_name: ''
+experiment_id: '972328042108214119'
+lifecycle_stage: active
+run_id: a30de8b91fbb41d49e6225867802ba42
+run_name: beautiful-sponge-342
+run_uuid: a30de8b91fbb41d49e6225867802ba42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789979914582
+status: 3
+tags: []
+user_id: abram
